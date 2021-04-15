@@ -9,9 +9,9 @@ from flask_basicauth import BasicAuth
 import json
 
 app = Flask(__name__)
-app.config['BASIC_AUTH_USERNAME'] = 'zlg'
-app.config['BASIC_AUTH_PASSWORD'] = 'zlgmcu@123'
-auth = BasicAuth(app)
+# app.config['BASIC_AUTH_USERNAME'] = 'zlg'
+# app.config['BASIC_AUTH_PASSWORD'] = 'zlgmcu@123'
+# auth = BasicAuth(app)
 
 
 class UrlError(Exception):
@@ -20,7 +20,7 @@ class UrlError(Exception):
 
 
 @app.route('/api/Fw/nat/<rule_name>', methods=['POST'])
-@auth.required
+# @auth.required
 def ng_port(rule_name):
     if rule_name == 'add_port':
         # 默认返回
@@ -29,18 +29,24 @@ def ng_port(rule_name):
         get_data = request.get_data()
         # 转换为JSon
         get_data = json.loads(get_data)
-        name = get_data.get('name')
-        wan_ip = get_data.get('wan_ip')
-        lan_ip = get_data.get('lan_ip')
-        port = get_data.get('port')
+        name = get_data.get('计算机名')[0]
+        wan_ip = get_data.get('目的IP地址')[0]
+        lan_ip = get_data.get('源IP地址')[0]
+        port = get_data.get('目的端口号')[0]
         # 处理传参
-        url = url_create
         body = create_mapping(name, wan_ip, lan_ip, port)
+        url = list(body)[0]
+        data = list(body)[1]
         object1 = Fw_Access(url)
-        result = object1.post_text(body)
-        return_dict['Code'] = result.status_code
-        return_dict['Message'] = status_code(result.status_code)
-        return json.dumps(return_dict, ensure_ascii=False)
+        result = object1.post_text(data)
+        result_status = result.status_code
+        if result_status == 200 and result_status == 201 and result_status == 204:
+            results_status = json.dumps('OK')
+            return json.dumps(results_status, ensure_ascii=False)
+        else:
+            return_dict['Code'] = result.status_code
+            return_dict['Message'] = status_code(result.status_code)
+            return json.dumps(return_dict, ensure_ascii=False)
     elif rule_name == 'del_port':
         return_dict = {'Code': False, 'Message': False}
         get_data = request.get_data()
@@ -57,7 +63,7 @@ def ng_port(rule_name):
 
 
 @app.route('/api/Fw/policy/<rule_name>', methods=['POST'])
-@auth.required
+# @auth.required
 def ng_policy(rule_name):
     if rule_name == 'rule_add':
         return_dict = {'Code': False, 'Message': False}
@@ -73,6 +79,8 @@ def ng_policy(rule_name):
         url_add = Body_Template.url_add_policy
         object1 = Fw_Access(url_add)
         result = object1.post_text(j_data)
+        code = result.status_code
+
         return_dict['Code'] = result.status_code
         return_dict['Message'] = status_code(result.status_code)
         return json.dumps(return_dict, ensure_ascii=False)
@@ -92,7 +100,7 @@ def ng_policy(rule_name):
 
 
 @app.route('/api/Ac/mac/<rule_name>', methods=['POST'])
-@auth.required
+# @auth.required
 def ac_controller(rule_name):
     if rule_name == 'add_mac':
         get_data = request.get_data()
@@ -154,4 +162,4 @@ def status_code(status):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=9999, debug=True)

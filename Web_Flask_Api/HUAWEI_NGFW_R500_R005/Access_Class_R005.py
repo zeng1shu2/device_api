@@ -77,3 +77,16 @@ class Fw_Access(object):
 #
 #     result = Fw_Access.json_to_xlm(data)
 #     print(result)
+# if __name__ == '__main__':
+#     from HUAWEI_NGFW_R500_R005 import Body_Template
+#     data = Body_Template.create_mapping('test1',
+#                                         '172.16.33.142',
+#                                         '121.33.243.38',
+#                                         22889)
+#     url = list(data)[0]
+#     print(url)
+#     data1 = list(data)[1]
+#     print(data1)
+#     response = Fw_Access(url)
+#     result = response.post_text(data1)
+#     print(result.text)
