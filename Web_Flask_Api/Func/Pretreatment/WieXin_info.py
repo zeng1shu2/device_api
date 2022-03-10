@@ -28,7 +28,7 @@ class User_Type(object):
         if self.user_type == '1':
             return int(8440)
         elif self.user_type == '0':
-            return int(33301)
+            return int(33001)
             
 class WeiXin_info(object):
     """发送账号信息"""
