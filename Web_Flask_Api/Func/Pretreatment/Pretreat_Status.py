@@ -58,5 +58,27 @@ class Info_Status_Code(object):
         elif self.info_code == 500:
             self.return_dict['Meg'] = 'Server Error。'
             return self.return_dict
-        
+
+    def Ac_Status_Code(self):
+        """sangfor_AC状态码"""
+        if self.info_code == 200:
+            status = '请求处理成功。'
+            return status
+        elif self.info_code == 1000:
+            self.return_dict['Meg'] = 'Company doesn`t exist'
+            return self.return_dict
+        elif self.info_code == 1001:
+            self.return_dict['Meg'] = 'Domian Creation fail '
+            return self.return_dict
+        elif self.info_code == 500:
+            self.return_dict['Meg'] = 'Server Error。'
+            return self.return_dict
     
+    def Huawei_Ac_Status_Code(self):
+        """huawei_AC状态码"""
+        if self.info_code['success'] == True:
+            status = '请求处理成功。'
+            return  status
+        elif self.info_code == 500:
+            self.return_dict['Meg'] = 'Server Error。'
+            return self.return_dict

@@ -1,0 +1,5 @@
+2022-04-20 09:19:29,052 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-04-20 09:19:29,053 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-04-20 09:21:40,127 main.py [line:53] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄÊý¾Ý²»ÄÜÎª¿Õ'}
+2022-04-20 09:21:40,943 _internal.py [line:225] INFO 172.16.33.56 - - [20/Apr/2022 09:21:40] "[31m[1mPOST /api/policy HTTP/1.1[0m" 400 -

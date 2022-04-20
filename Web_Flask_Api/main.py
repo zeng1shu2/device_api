@@ -1,16 +1,20 @@
 # coding:utf-8
+from base64 import encode
 from flask import Flask, request
 from Func.Pretreatment.Pretreat_Type_Data import Pretreat_Data
 from Func.Pretreatment.Pretreat_Event import Pretreat_Event
 from Func.Pretreatment.Pretreat_Status import Info_Status_Code
 from Error.Error_Class import Type_Value_Error
+from Log import log
 import json
-
+log = log.logs()
 
 app = Flask(__name__)
 
 
 # 接口测试
+
+
 @app.route('/api/test', methods=['GET'])
 def ng_test():
     return_dict = json.dumps('OK')
@@ -30,11 +34,13 @@ def cors(environ):
 def ng_port(rule_name):
     return_dict = {'Code': False}
     if (rule_name == "policy"
+        or rule_name == "policy/AcMac"
+        or rule_name == "policy/AcUrl"
         or rule_name == "policy/Users"
         or rule_name == "policy/UserModif"
         or rule_name == "policy/ChangeUsbPolicy"
         or rule_name == "policy/ChangeSerialCtrlPolicy"
-        or rule_name == "policy/ChangeNetWorkRequest"
+        or rule_name == "policy/ChangeNetCtrlPolicy"
         or rule_name == "policy/ChangeChangeDesk"):
         # 获取传入的参数
         try:
@@ -42,9 +48,11 @@ def ng_port(rule_name):
             # print(get_data)
         except:
             ValueError = Type_Value_Error.Parameter_Error('请求的参数错误')
+            log.error(ValueError)
             return ValueError, 400
         if get_data is None or not bool(get_data):
             ValueError = Type_Value_Error.Parameter_Error('请求的数据不能为空')
+            log.error(ValueError)
             return ValueError, 400
         else:
             # 获取权限类型
@@ -55,6 +63,7 @@ def ng_port(rule_name):
                 ValueError = Type_Value_Error(permission)
                 ValueError = ValueError.Value_Error()
                 # 返回错误类型
+                log.error(ValueError)
                 return ValueError, 400
             permission_type = list(permission.keys())
             # 判断获取的类型是否存在
@@ -80,6 +89,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 2:
                             event = Pretreat_Event(permission)
@@ -92,6 +102,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Sdc_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 3:
                             event = Pretreat_Event(permission)
@@ -104,6 +115,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Sdc_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 4:
                             event = Pretreat_Event(permission)
@@ -116,6 +128,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Sdc_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 5:
                             event = Pretreat_Event(permission)
@@ -129,6 +142,7 @@ def ng_port(rule_name):
                                     list(_status)[0])
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = list(_status)[0]
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 6:
                             event = Pretreat_Event(permission)
@@ -141,6 +155,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 7:
                             event = Pretreat_Event(permission)
@@ -153,7 +168,19 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Sdc_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
+                        elif i == 8:
+                            event = Pretreat_Event(permission)
+                            _status = event.Evebt_Ac_ChangeUrl()
+                            if _status == int(200):
+                                continue
+                            else:
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
                     return json.dumps('OK')
                 else:
                     # 执行单一权限处理并返回结果
@@ -171,6 +198,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 2:
                             event = Pretreat_Event(permission)
@@ -182,6 +210,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_code = return_code.Sdc_Status_Code()
                                 result_s = json.dumps(return_code)
+                                log.warning(result_s)
                                 return result_s, 400
                         elif i == 3:
                             event = Pretreat_Event(permission)
@@ -193,6 +222,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_code = return_code.Sdc_Status_Code()
                                 result_s = json.dumps(return_code)
+                                log.warning(result_s)
                                 return result_s, 400
                         elif i == 4:
                             event = Pretreat_Event(permission)
@@ -204,6 +234,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_code = return_code.Sdc_Status_Code()
                                 result_s = json.dumps(return_code)
+                                log.warning(result_s)
                                 return result_s, 400
                         elif i == 5:
                             event = Pretreat_Event(permission)
@@ -214,6 +245,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 6:
                             event = Pretreat_Event(permission)
@@ -224,6 +256,7 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 7:
                             event = Pretreat_Event(permission)
@@ -234,13 +267,39 @@ def ng_port(rule_name):
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Sdc_Status_Code()
                                 return_dict['Code'] = _status
+                                log.warning(return_dict)
                                 return return_dict, 400
+                        elif i == 8:
+                            # AC行为管理添加url地址
+                            event = Pretreat_Event(permission)
+                            _status = event.Evebt_Ac_ChangeUrl()
+                            if _status == int(200):
+                                continue
+                            else:
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
+                        elif i == 9:
+                            # 准入添加mac地址
+                            event = Pretreat_Event(permission)
+                            _status = event.Event_AC_ChangeMac()
+                            if _status['success'] == True:
+                                continue
+                            else:
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Huawei_Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
                     return json.dumps('OK')
             else:
                 return json.dumps('OK')
     else:
         # 返回一个请求错误
         ValueError = Type_Value_Error.Parameter_Error('url错误，url地址不存在')
+        log.warning(ValueError)
         return ValueError, 400
 
 

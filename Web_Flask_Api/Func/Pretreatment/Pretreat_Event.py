@@ -3,15 +3,21 @@
 """预处理执行事件类"""
 # 从Web_Flask_Api目录下开始查询包
 import sys
+import string
 sys.path.append('/data/My_App/Web_Flask_Api')
 sys.path.append('D:/project/Web_Flask_Api')
+from Log import log
 from Func.Api.SDC5_API.Access_Class_SDC import Sdc_Access
 from Func.Api.HUAWEI_NGFW_R500_R005.Body_Template import *
 from Func.Api.HUAWEI_NGFW_R500_R005 import Body_Template
 from Func.Api.HUAWEI_NGFW_R500_R005.Access_Class_R005 import Fw_Access
 from Func.Pretreatment.WieXin_info import *
-import string
+from Func.Api.SANGFOR_AC_API.Ac_url_Dom import Evenet_Ac_Dom
+from Func.Api.HUAWEI_AGILE_CONTROLLER import Agile_Mac
 from random import *
+log = log.logs()
+
+
 
 
 class Pretreat_Event(object):
@@ -106,6 +112,7 @@ class Pretreat_Event(object):
             dept = j_data['reply']['data']['user-manage']['vsys']['user'].get('parent-user-group')
         except:
             # 用户不存在
+            log.warning('修改vpn失败,原因是用户存在。')
             return -1
         # 传入参数
         body = modife_user(name, passw, dept, time_r)
@@ -168,4 +175,54 @@ class Pretreat_Event(object):
         no = Sdc_Access().Sdc_User_info(addr_ip)
         # 传入参数
         object1 = Sdc_Access().Sdc_ChangeDesk(name=todisk_name, path=todisk_path, no=no)
+        return object1
+
+    def Evebt_Ac_ChangeUrl(self):
+        """添加URL白名单"""
+        data_info = self.get_data.get(8)
+        # 获取策略需要的参数
+        addr_url = data_info.get('url地址')
+        Ac_Dom = Evenet_Ac_Dom(addr_url)
+        Ac_Dom_1 = Ac_Dom.Login_ac()
+        # 类型，判断是致远还是周立功
+        company = data_info.get("公司名称")
+        if company in '7893214819773270159':
+            zy = Ac_Dom.Gain_Url_value('技术支持无限制的网站')
+            url_data = zy['data']['url']
+            url_data = url_data + '\r\n%s' % addr_url
+            data = '{"opr":"modify","data":{"id":"","name":"技术支持无限制的网站","depict":"","url":"'+url_data+'","keyword":""}}'
+            data = data.encode('utf-8')
+            zy = Ac_Dom.Update_Url(data)
+            if zy ['success'] is True:
+                Ac_Dom.Sysctl_Config()
+                return 200
+            else:
+                # 域名创建失败
+                return 1001
+        elif company in '-8486162257746376183':
+            zlg = Ac_Dom.Gain_Url_value('ZLG技术支持')
+            url_data = zlg['data']['url']
+            url_data = url_data + '\r\n%s' % addr_url
+            data = '{"opr":"modify","data":{"id":"","name":"ZLG技术支持","depict":"","url":"'+url_data+'","keyword":""}}'
+            data = data.encode('utf-8')
+            zlg = Ac_Dom.Update_Url(data)
+            if zlg['success'] is True:
+                Ac_Dom.Sysctl_Config()
+                return 200
+            else:
+                # 域名创建失败
+                return 1001
+        else:
+            # 公司名称不存在
+            log.warning('公司名称不存在')
+            return 1000
+    
+    def Event_AC_ChangeMac(self):
+        """添加设备白名单"""
+        data_info = self.get_data.get(9)
+        # 获取参数
+        username = data_info.get('计算机名')
+        address_mac = data_info.get('mac地址')
+        # 执行传参
+        object1 = Agile_Mac.Add_Mac(address_mac, username)
         return object1
