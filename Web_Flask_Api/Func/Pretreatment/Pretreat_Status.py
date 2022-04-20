@@ -20,7 +20,10 @@ class Info_Status_Code(object):
             status = '调用rpc方法处理成功。'
             return status
         elif self.info_code == -1:
-            self.return_dict['Meg'] = '用户不存在。'
+            self.return_dict['Meg'] = '权限类型错误。'
+            return self.return_dict
+        elif self.info_code == -2:
+            self.return_dict['Meg'] = '修改vpn失败,原因是用户存在'
             return self.return_dict
         elif self.info_code == 400:
             self.return_dict['Meg'] = '非法的请求。'

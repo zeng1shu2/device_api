@@ -113,7 +113,7 @@ class Pretreat_Event(object):
         except:
             # 用户不存在
             log.warning('修改vpn失败,原因是用户存在。')
-            return -1
+            return -2
         # 传入参数
         body = modife_user(name, passw, dept, time_r)
         url = list(body)[0]
