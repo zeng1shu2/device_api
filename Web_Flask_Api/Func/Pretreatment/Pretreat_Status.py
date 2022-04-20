@@ -76,9 +76,12 @@ class Info_Status_Code(object):
     
     def Huawei_Ac_Status_Code(self):
         """huawei_AC状态码"""
-        if self.info_code['success'] == True:
-            status = '请求处理成功。'
-            return  status
+        # if self.info_code['success'] == True:
+        #     status = '请求处理成功。'
+        #     return  status
+        if self.info_code == 401:
+            self.return_dict['Meg'] = '存在相同MAC的设备。'
+            return self.return_dict
         elif self.info_code == 500:
             self.return_dict['Meg'] = 'Server Error。'
             return self.return_dict

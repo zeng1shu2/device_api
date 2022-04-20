@@ -10,7 +10,6 @@ FilePath: \device_api-master\Web_Flask_Api\Func\SANGFOR_AC_API\Access_Class_AC.p
 
 from SANGFOR_AC_API.Rancom_md5 import Identification
 import requests
-import json
 import sys
 sys.path.append('/data/My_App/Web_Flask_Api/Func')
 

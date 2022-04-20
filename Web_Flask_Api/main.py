@@ -287,7 +287,16 @@ def ng_port(rule_name):
                             _status = event.Event_AC_ChangeMac()
                             if _status['success'] == True:
                                 continue
+                            elif _status['message'] == '在"设备组/MAC旁路组/研发测试设备"设备组已经存在相同MAC的设备,请重新输入。':
+                                _status = 401
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Huawei_Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
                             else:
+                                print(_status)
+                                print(_status.status_code)
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Ac_Status_Code()
                                 return_dict['Code'] = _status

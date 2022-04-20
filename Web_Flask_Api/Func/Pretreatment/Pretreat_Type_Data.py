@@ -204,11 +204,16 @@ class Pretreat_Data(object):
                     Error.append('url not exist')
                     result_dict[0] = Error
                 result_dict[8]  = result_url1
-            elif "内网设备认证权限" in _data[0]:
+            elif "设备准入权限" in _data[0]:
                 result_mac = {}
                 try:
                     result_mac['计算机名'] = self.data.get("计算机名")[0]
                     result_mac['mac地址'] = self.data.get('mac地址')[0]
+                    lenub = result_mac['mac地址'] = self.data.get('mac地址')[0]
+                    if (len(lenub)) != 17:
+                        log.warning('mac format error')
+                        Error.append('mac format error')
+                        result_dict[0] = Error
                 except:
                     log.warning('mac not exist')
                     Error.append('mac not exist')

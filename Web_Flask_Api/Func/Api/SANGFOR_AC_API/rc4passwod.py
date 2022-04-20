@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/data/My_App/Web_Flask_Api')
+sys.path.append('D:/project/device_api/Web_Flask_Api')
 from Crypto.Cipher import ARC4 as rc4cipher
 import base64
 
