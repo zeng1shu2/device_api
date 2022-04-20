@@ -35,7 +35,7 @@ class Pretreat_Data(object):
         #         result_list.append(list(data))
         # return result_list
         try:
-            vpn_type = self.data.get('VPN账号类型')[0]
+            vpn_type = self.data.get('VPN权限类型')[0]
             return vpn_type
         except:
             log.error('权限类型错误-1')
