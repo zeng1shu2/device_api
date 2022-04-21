@@ -95,14 +95,14 @@ class Pretreat_Data(object):
                     result_usb["计算机名"] = self.data.get("计算机名")[0]
                     result_usb["IP地址"] = self.data.get("IP地址")[0]
                     if len(self.data.get("服务名")[0]) == 0:
-                        log.warning('server cannot be empty')
-                        Error.append('server cannot be empty')
+                        log.warning('service name cannot be empty')
+                        Error.append('service name cannot be empty')
                         result_dict[0] = Error
                     else:
                         result_usb["服务名"] = self.data.get("服务名")[0]
                 except:
-                    log.warning('server not exist')
-                    Error.append('server not exist')
+                    log.warning('service name not exist')
+                    Error.append('service name not exist')
                     result_dict[0] = Error
                 result_dict[2] = result_usb
             elif "串口权限" in _data[0]:
