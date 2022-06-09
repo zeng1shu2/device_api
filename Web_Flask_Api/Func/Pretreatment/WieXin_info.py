@@ -21,14 +21,17 @@ class Weixin_url(object):
 
 class User_Type(object):
     """根据用户类型返回对应的端口号，0=true, 1= false"""
-    def __init__(self, user_type):
+    def __init__(self, user_type, company):
         self.user_type = user_type
-
+        self.company = company 
     def teturn_port(self):
-        if self.user_type == '1':
+        if self.user_type == '1' and self.company == '7893214819773270159':
             return int(8440)
+        elif self.user_type == '1' and self.company == '-8486162257746376183':
+            return int(9880)
         elif self.user_type == '0':
             return int(33001)
+            
             
 class WeiXin_info(object):
     """发送账号信息"""
@@ -54,4 +57,13 @@ class WeiXin_info(object):
         s_data['msgtype'] = 'text'
         s_data['text'] = {}
         s_data['text']['content'] = '您的VPN账户已修改:\n使用权限延长至 %s 23:59:59。' % teme_r
+        post(url=self.url, json=s_data,headers=self.headers, verify=False)
+
+    def WinXin_Content_pass(self, uname, password):
+        s_data = {}
+        uname = uname
+        s_data['touser'] = uname
+        s_data['msgtype'] = 'text'
+        s_data['text'] = {}
+        s_data['text']['content'] = '您的VPN账户密码已重置为:%s ' % password
         post(url=self.url, json=s_data,headers=self.headers, verify=False)

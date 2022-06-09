@@ -2,6 +2,18 @@
 
 """状态码信息说明"""
 
+class Info_Status_Code_vpn(object):
+    def __init__(self, info_code,time):
+        self.info_code = info_code
+        self.info_time = time
+        self.return_dict = {'Code': False,"Meg":"Nome","Time":'Nome'}
+    
+    def Huawei_Vpn_Status_Code(self):
+        """vpn查询状态码"""
+        if self.info_code == 1000:
+            self.return_dict['Meg'] = '用户存在。'
+            self.return_dict['Time'] = self.info_time
+            return self.return_dict
 
 class Info_Status_Code(object):
     def __init__(self, info_code):
@@ -11,19 +23,22 @@ class Info_Status_Code(object):
     def Huawei_Fw_Status_Code(self):
         """ 华为防火墙状态码 """
         if self.info_code == 200:
-            status = '请求处理成功。'
-            return status
+            self.return_dict['Meg'] = '请求处理成功。'
+            return self.return_dict
+        elif self.info_code == 1000:
+            self.return_dict['Meg'] = '用户存在。'
+            return self.return_dict
         elif self.info_code == 201:
             status = '创建资源成功。'
             return status
         elif self.info_code == 204:
-            status = '调用rpc方法处理成功。'
-            return status
+            self.return_dict['Meg'] = '调用rpc方法处理成功。'
+            return self.return_dict
         elif self.info_code == -1:
             self.return_dict['Meg'] = '权限类型错误。'
             return self.return_dict
         elif self.info_code == -2:
-            self.return_dict['Meg'] = '修改vpn失败,原因是用户存在'
+            self.return_dict['Meg'] = '修改vpn失败,原因是用户名错误或不存在'
             return self.return_dict
         elif self.info_code == 400:
             self.return_dict['Meg'] = '非法的请求。'
@@ -32,8 +47,8 @@ class Info_Status_Code(object):
             self.return_dict['Meg'] = '请求认证失败。'
             return self.return_dict
         elif self.info_code == 403:
-            status = '资源不存在或无权限操作。'
-            return status
+            self.return_dict['Meg'] = '资源不存在或无权限操作。'
+            return self.return_dict
         elif self.info_code == 409:
             self.return_dict['Meg'] = '资源被占用,或资源不存在。'
             return self.return_dict
@@ -88,3 +103,5 @@ class Info_Status_Code(object):
         elif self.info_code == 500:
             self.return_dict['Meg'] = 'Server Error。'
             return self.return_dict
+
+    

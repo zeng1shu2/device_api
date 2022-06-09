@@ -1,9 +1,8 @@
 # coding:utf-8
-from base64 import encode
 from flask import Flask, request
 from Func.Pretreatment.Pretreat_Type_Data import Pretreat_Data
-from Func.Pretreatment.Pretreat_Event import Pretreat_Event
-from Func.Pretreatment.Pretreat_Status import Info_Status_Code
+from Func.Pretreatment.Pretreat_Event import *
+from Func.Pretreatment.Pretreat_Status import *
 from Error.Error_Class import Type_Value_Error
 from Log import log
 import json
@@ -41,19 +40,52 @@ def ng_port(rule_name):
         or rule_name == "policy/ChangeUsbPolicy"
         or rule_name == "policy/ChangeSerialCtrlPolicy"
         or rule_name == "policy/ChangeNetCtrlPolicy"
-        or rule_name == "policy/ChangeChangeDesk"):
+        or rule_name == "policy/ChangeChangeDesk"
+        or rule_name == "policy/ShowUser"
+        or rule_name == "policy/ResetPass"):
         # 获取传入的参数
         try:
             get_data = request.get_json()
+            if get_data is None or not bool(get_data):
+                ValueError = Type_Value_Error.Parameter_Error('请求的数据不能为空')
+                log.error(ValueError)
+                return ValueError, 400
             # print(get_data)
         except:
             ValueError = Type_Value_Error.Parameter_Error('请求的参数错误')
             log.error(ValueError)
             return ValueError, 400
-        if get_data is None or not bool(get_data):
-            ValueError = Type_Value_Error.Parameter_Error('请求的数据不能为空')
-            log.error(ValueError)
-            return ValueError, 400
+        if rule_name == "policy/ShowUser":
+            name = get_data.get('用户名')[0]
+            try:
+                _status = Event_Fw_Show_user(name)
+                print(_status)
+                return_code = Info_Status_Code_vpn(_status[0],_status[1])
+                return_dict = return_code.Huawei_Vpn_Status_Code()
+                return_dict['Code'] = _status[0]
+                return return_dict, 200
+            except:
+                return_code = Info_Status_Code(_status)
+                return_dict = return_code.Huawei_Fw_Status_Code()
+                return_dict['Code'] = _status
+                log.warning(return_dict)
+                return return_dict, 400
+        elif rule_name == "policy/ResetPass":
+            try:
+                username = get_data.get('用户名')[0]
+                company = get_data.get('公司名称')[0]
+                _status = Event_Fw_Modify_pass(username,company)
+                return_code = Info_Status_Code(_status)
+                return_dict = return_code.Huawei_Fw_Status_Code()
+                return_dict['Code'] = _status
+                return return_dict, 200
+            except:
+                _status = 400
+                return_code = Info_Status_Code(_status)
+                return_dict = return_code.Huawei_Fw_Status_Code()
+                return_dict['Code'] = _status
+                log.warning(return_dict)
+                return return_dict, 400
         else:
             # 获取权限类型
             permission = Pretreat_Data(get_data)
@@ -181,6 +213,27 @@ def ng_port(rule_name):
                                 return_dict['Code'] = _status
                                 log.warning(return_dict)
                                 return return_dict, 500
+                        elif i == 9:
+                            # 准入添加mac地址
+                            event = Pretreat_Event(permission)
+                            _status = event.Event_AC_ChangeMac()
+                            if _status['success'] == True:
+                                continue
+                            elif _status['message'] == '在"设备组/MAC旁路组/研发测试设备"设备组已经存在相同MAC的设备,请重新输入。':
+                                _status = 401
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Huawei_Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
+                            else:
+                                print(_status)
+                                print(_status.status_code)
+                                return_code = Info_Status_Code(_status)
+                                return_dict = return_code.Huawei_Ac_Status_Code()
+                                return_dict['Code'] = _status
+                                log.warning(return_dict)
+                                return return_dict, 500
                     return json.dumps('OK')
                 else:
                     # 执行单一权限处理并返回结果
@@ -195,9 +248,9 @@ def ng_port(rule_name):
                                 if _policy == int(201):
                                     continue
                             else:
+                                return_dict['Code'] = _status
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Fw_Status_Code()
-                                return_dict['Code'] = _status
                                 log.warning(return_dict)
                                 return return_dict, 400
                         elif i == 2:
@@ -295,8 +348,6 @@ def ng_port(rule_name):
                                 log.warning(return_dict)
                                 return return_dict, 500
                             else:
-                                print(_status)
-                                print(_status.status_code)
                                 return_code = Info_Status_Code(_status)
                                 return_dict = return_code.Huawei_Ac_Status_Code()
                                 return_dict['Code'] = _status

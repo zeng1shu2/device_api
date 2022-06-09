@@ -118,5 +118,13 @@ def modife_user(name,passw,dept,time_r):
             '</user>' % (passw,dept,time_r)
     return url_modif_user, body
 
+# 修改用户密码
+def modife_pass(name,passw,dept):
+    """修改用户密码"""
+    url_modif_pass = f'https://172.16.100.240:9999/restconf/data/huawei-user-management-fw:user-manage/vsys=public/user={str(name)},default'
+    body =  '<user>' \
+            '<password>$0$%s</password>' \
+            '<parent-user-group>%s</parent-user-group>' \
+            '</user>' % (passw,dept)
+    return url_modif_pass, body
 
-    

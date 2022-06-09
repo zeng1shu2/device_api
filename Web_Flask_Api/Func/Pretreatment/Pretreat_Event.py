@@ -2,22 +2,18 @@
 
 """预处理执行事件类"""
 # 从Web_Flask_Api目录下开始查询包
-import sys
-import string
+import string,random,sys
 sys.path.append('/data/My_App/Web_Flask_Api')
-sys.path.append('D:/project/Web_Flask_Api')
-from Log import log
-from Func.Api.SDC5_API.Access_Class_SDC import Sdc_Access
-from Func.Api.HUAWEI_NGFW_R500_R005.Body_Template import *
-from Func.Api.HUAWEI_NGFW_R500_R005 import Body_Template
-from Func.Api.HUAWEI_NGFW_R500_R005.Access_Class_R005 import Fw_Access
-from Func.Pretreatment.WieXin_info import *
-from Func.Api.SANGFOR_AC_API.Ac_url_Dom import Evenet_Ac_Dom
+sys.path.append('D:/Users/zengshu/Desktop/Web_Flask_Api')
 from Func.Api.HUAWEI_AGILE_CONTROLLER import Agile_Mac
-from random import *
+from Func.Api.SANGFOR_AC_API.Ac_url_Dom import Evenet_Ac_Dom
+from Func.Pretreatment.WieXin_info import *
+from Func.Api.HUAWEI_NGFW_R500_R005.Access_Class_R005 import Fw_Access
+from Func.Api.HUAWEI_NGFW_R500_R005 import Body_Template
+from Func.Api.HUAWEI_NGFW_R500_R005.Body_Template import *
+from Func.Api.SDC5_API.Access_Class_SDC import Sdc_Access
+from Log import log
 log = log.logs()
-
-
 
 
 class Pretreat_Event(object):
@@ -25,10 +21,19 @@ class Pretreat_Event(object):
         self.get_data = get_data
 
     def Numberpass(self):
-        """生成随机8-10位大小写密码"""
-        characters = string.ascii_letters +  string.digits
-        password = "".join(choice(characters) for x in range(randint(8,10)))
-        return password
+        """生成随机8位大小写密码"""
+        characters = string.ascii_letters + string.digits
+        passwds = []
+        for i in range(1):
+            list_passwd_all = random.sample(characters, 5) 
+            list_passwd_all.extend(random.sample(string.digits, 1)) 
+            list_passwd_all.extend(random.sample(string.ascii_lowercase, 1)) 
+            list_passwd_all.extend(random.sample(string.ascii_uppercase, 1)) 
+            random.shuffle(list_passwd_all) 
+            str_passwd = ''.join(list_passwd_all) 
+            if str_passwd not in passwds:
+                passwds.append(str_passwd)
+        return passwds[0]  
 
     def Event_Fw_Port(self):
         """执行防火墙的端口映射"""
@@ -67,9 +72,9 @@ class Pretreat_Event(object):
     def Event_Fw_create_user(self):
         """创建用户-vpn账号"""
         data_info = self.get_data.get(5)
-        passw = self.Numberpass() # 随机密码
-        
-        #获取创建用户的参数
+        passw = self.Numberpass()  # 随机密码
+
+        # 获取创建用户的参数
         name = data_info.get('计算机名')
         dept = data_info.get('VPN用户组')
         time_r = data_info.get('结束时间')
@@ -85,7 +90,7 @@ class Pretreat_Event(object):
         if _status == int(201):
             url = Weixin_url(company)
             url = url.Url_type()
-            port = User_Type(user_type)
+            port = User_Type(user_type, company)
             port = port.teturn_port()
             # 给新建用户发送账号信息
             info = WeiXin_info(url)
@@ -93,7 +98,7 @@ class Pretreat_Event(object):
             return _status
         else:
             return _status
-            
+
     def Event_Fw_Modify(self):
         """vpn用户信息修改"""
         data_info = self.get_data.get(6)
@@ -108,11 +113,12 @@ class Pretreat_Event(object):
         j_data = Fw_Access.xlm_to_json(result)
         # 获取到用户信息的组和密码
         try:
-            passw = j_data['reply']['data']['user-manage']['vsys']['user'].get('password')
-            dept = j_data['reply']['data']['user-manage']['vsys']['user'].get('parent-user-group')
+            passw = j_data['reply']['data']['user-manage']['vsys']['user'].get(
+                'password')
+            dept = j_data['reply']['data']['user-manage']['vsys']['user'].get(
+                'parent-user-group')
         except:
-            # 用户不存在
-            log.warning('修改vpn失败,原因是用户存在。')
+            # 用户名不存在
             return -2
         # 传入参数
         body = modife_user(name, passw, dept, time_r)
@@ -164,7 +170,7 @@ class Pretreat_Event(object):
         # 传入参数
         object1 = Sdc_Access().Sdc_ChangeNet(process=process, no=no, remote=dives_ip)
         return object1
-    
+
     def Event_Sdc_ChangeDesk(self):
         """执行添加托盘程序权限"""
         data_info = self.get_data.get(7)
@@ -190,10 +196,11 @@ class Pretreat_Event(object):
             zy = Ac_Dom.Gain_Url_value('技术支持无限制的网站')
             url_data = zy['data']['url']
             url_data = url_data + '\r\n%s' % addr_url
-            data = '{"opr":"modify","data":{"id":"","name":"技术支持无限制的网站","depict":"","url":"'+url_data+'","keyword":""}}'
+            data = '{"opr":"modify","data":{"id":"","name":"技术支持无限制的网站","depict":"","url":"' + \
+                url_data+'","keyword":""}}'
             data = data.encode('utf-8')
             zy = Ac_Dom.Update_Url(data)
-            if zy ['success'] is True:
+            if zy['success'] is True:
                 Ac_Dom.Sysctl_Config()
                 return 200
             else:
@@ -203,7 +210,8 @@ class Pretreat_Event(object):
             zlg = Ac_Dom.Gain_Url_value('ZLG技术支持')
             url_data = zlg['data']['url']
             url_data = url_data + '\r\n%s' % addr_url
-            data = '{"opr":"modify","data":{"id":"","name":"ZLG技术支持","depict":"","url":"'+url_data+'","keyword":""}}'
+            data = '{"opr":"modify","data":{"id":"","name":"ZLG技术支持","depict":"","url":"' + \
+                url_data+'","keyword":""}}'
             data = data.encode('utf-8')
             zlg = Ac_Dom.Update_Url(data)
             if zlg['success'] is True:
@@ -216,7 +224,7 @@ class Pretreat_Event(object):
             # 公司名称不存在
             log.warning('公司名称不存在')
             return 1000
-    
+
     def Event_AC_ChangeMac(self):
         """添加设备白名单"""
         data_info = self.get_data.get(9)
@@ -226,3 +234,71 @@ class Pretreat_Event(object):
         # 执行传参
         object1 = Agile_Mac.Add_Mac(address_mac, username)
         return object1
+
+
+def Event_Fw_Show_user(name):
+    """查询用户"""
+    url = show_users(name)
+    object1 = Fw_Access(url)
+    result = object1.get_text()
+    data_text = object1.xlm_to_json(result)
+    try:
+        data_text['reply']['data']['user-manage']['vsys']['user']['name']
+        time = data_text['reply']['data']['user-manage']['vsys']['user']['expiration-time']
+        no_time = 'expiration-time' in time.keys()
+        off_time = 'never-expire' in time.keys()
+        if no_time == True:
+            timp_value = data_text['reply']['data']['user-manage']['vsys']['user']['expiration-time']['expiration-time']
+        elif off_time == True:
+            timp_value = data_text['reply']['data']['user-manage']['vsys']['user']['expiration-time']['never-expire']
+        return 1000, timp_value
+    except:
+        return 403
+
+
+def Event_Fw_Modify_pass(name, company):
+    """修改vpn用户密码"""
+    # 获取修改参数
+    def Numberpass():
+        """生成随机8-10位大小写密码"""
+        characters = string.ascii_letters + string.digits
+        passwds = []
+        for i in range(1):
+            list_passwd_all = random.sample(characters, 5) 
+            list_passwd_all.extend(random.sample(string.digits, 1)) 
+            list_passwd_all.extend(random.sample(string.ascii_lowercase, 1)) 
+            list_passwd_all.extend(random.sample(string.ascii_uppercase, 1)) 
+            random.shuffle(list_passwd_all) 
+            str_passwd = ''.join(list_passwd_all) 
+            if str_passwd not in passwds:
+                passwds.append(str_passwd)
+        return passwds[0] 
+    passw = Numberpass()  # 随机密码
+    # 查看用户信息
+    url = show_users(name)
+    object1 = Fw_Access(url)
+    result = object1.get_text()
+    j_data = Fw_Access.xlm_to_json(result)
+    # 获取到用户信息的组和密码
+    try:
+        dept = j_data['reply']['data']['user-manage']['vsys']['user'].get(
+            'parent-user-group')
+    except:
+        # 用户名不存在
+        return -2
+    # 传入参数
+    body = modife_pass(name, passw, dept)
+    url = list(body)[0]
+    data = list(body)[1]
+    object1 = Fw_Access(url)
+    result = object1.put_text(data.encode('utf-8'))
+    _status = result.status_code
+    if _status == int(204):
+        url = Weixin_url(company)
+        url = url.Url_type()
+        # 发送密码给用户微信
+        info = WeiXin_info(url)
+        info.WinXin_Content_pass(name, passw)
+        return _status
+    else:
+        return _status
