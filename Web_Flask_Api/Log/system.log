@@ -1906,3 +1906,272 @@ UnboundLocalError: local variable 'Dept_data' referenced before assignment
 2022-06-09 15:09:55,419 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
 2022-06-09 15:09:55,689 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
 2022-06-09 15:09:55,693 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 15:09:55] "POST /api/policy/ChangeNetCtrlPolicy HTTP/1.1" 200 -
+2022-06-09 16:08:24,801 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:08:24,803 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:09:43,753 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:43,779 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:43,821 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:43,846 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetNode HTTP/1.1" 200 None
+2022-06-09 16:09:46,950 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:46,963 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:46,997 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:47,305 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:09:49,109 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:49,119 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:49,146 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:49,429 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:09:50,830 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:50,843 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:50,867 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:51,196 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:09:52,134 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:52,144 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:52,170 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:52,459 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:09:53,935 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:53,943 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:09:53,970 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:09:54,239 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeNetCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:09:55,839 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:09:55] "POST /api/policy/ChangeNetCtrlPolicy HTTP/1.1" 200 -
+2022-06-09 16:13:30,162 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:13:30,175 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:13:30,212 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:13:30,235 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetNode HTTP/1.1" 200 None
+2022-06-09 16:13:33,614 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:13:33,629 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:13:33,655 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:13:34,037 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeSerialCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:13:34,716 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:13:34] "POST /api/policy/ChangeSerialCtrlPolicy HTTP/1.1" 200 -
+2022-06-09 16:14:18,238 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:18,251 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:14:18,277 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:18,318 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetNode HTTP/1.1" 200 None
+2022-06-09 16:14:20,654 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:20,686 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:14:20,710 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:21,103 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeSerialCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:14:22,159 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:22,169 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:14:22,196 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:22,609 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeSerialCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:14:23,927 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:23,940 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:14:23,966 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:14:26,380 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeSerialCtrlPolicy HTTP/1.1" 200 None
+2022-06-09 16:14:27,825 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:14:27] "POST /api/policy/ChangeSerialCtrlPolicy HTTP/1.1" 200 -
+2022-06-09 16:16:47,286 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:17:07,874 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:17:07,875 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:17:40,084 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:17:40,085 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:18:02,455 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:02,474 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:18:02,521 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:02,542 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetNode HTTP/1.1" 200 None
+2022-06-09 16:18:05,838 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:05,850 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:18:05,871 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:06,207 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeUsbPolicy HTTP/1.1" 200 None
+2022-06-09 16:18:07,483 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:07,495 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:18:07,522 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:07,866 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeUsbPolicy HTTP/1.1" 200 None
+2022-06-09 16:18:09,221 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:09,236 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/GetToken HTTP/1.1" 200 None
+2022-06-09 16:18:09,274 connectionpool.py [line:227] DEBUG Starting new HTTP connection (1): 192.168.5.114:8050
+2022-06-09 16:18:09,582 connectionpool.py [line:452] DEBUG http://192.168.5.114:8050 "POST /CustomerApi/ChangeUsbPolicy HTTP/1.1" 200 None
+2022-06-09 16:18:10,885 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:18:10] "POST /api/policy/ChangeUsbPolicy HTTP/1.1" 200 -
+2022-06-09 16:52:58,513 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:58] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:58,667 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:58] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:58,801 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:58] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:58,925 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:58] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,059 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,189 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,319 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,444 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,585 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:52:59,738 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:52:59] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:23,838 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:23] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:23,970 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:23] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,099 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,237 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,379 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,505 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,633 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,755 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:24,885 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,015 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,147 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,277 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,403 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,541 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,707 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,837 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:25,971 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,118 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,252 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,395 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,537 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,671 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,817 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:26,958 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,120 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,260 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,411 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,563 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,719 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:27,918 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,093 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,224 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,368 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,501 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,637 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,825 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:28,973 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:29,142 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:29] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:29,291 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:29] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:29,497 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:29] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:35,591 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:35] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:50,582 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:50] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:51,770 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:51] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:52,275 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:52] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:53:52,498 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:53:52] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:20,295 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:54:20,297 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:54:20,814 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:24,083 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:24] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:25,004 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:25,891 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:25] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:26,541 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:26,823 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:26] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:27,127 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:27,429 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:27] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:28,272 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:28] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:29,106 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:29] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:29,759 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:29] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:54:30,434 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:54:30] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:55:13,483 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:55:13] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:55:14,588 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:55:14] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:56:47,162 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:56:47,163 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:56:57,390 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:56:57,401 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:56:57] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:57:23,106 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:57:23,109 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:57:23] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:57:24,181 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:57:24,183 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:57:24] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:57:59,586 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:57:59,590 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:57:59] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:00,710 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:00,711 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:00] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:06,436 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:58:06,438 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:58:10,592 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:10,598 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:10] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:11,774 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:11,776 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:11] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:12,529 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:12,531 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:12] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:13,410 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:13,412 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:13] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:13,939 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:13,942 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:13] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:14,194 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:14,196 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:14] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:14,485 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:14,487 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:14] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:14,878 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:14,879 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:14] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:58:16,548 main.py [line:56] ERROR {'Code': 400, 'ErrorMas': 'ÇëÇóµÄ²ÎÊý´íÎó'}
+2022-06-09 16:58:16,550 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:58:16] "[31m[1mPOST /api/policy/ShowUser HTTP/1.1[0m" 400 -
+2022-06-09 16:59:01,768 _internal.py [line:225] WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-06-09 16:59:01,769 _internal.py [line:225] INFO  * Running on http://172.16.32.142:80/ (Press CTRL+C to quit)
+2022-06-09 16:59:17,590 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:17] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:17,712 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:17] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:17,831 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:17] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:17,947 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:17] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,069 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,194 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,309 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,422 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,542 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,665 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,787 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:18,912 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:18] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,035 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,163 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,287 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,418 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,545 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,717 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,843 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:19,968 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:19] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,096 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,227 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,356 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,486 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,615 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,747 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:20,875 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:20] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,006 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,135 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,272 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,404 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,536 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,673 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,805 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:21,937 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:21] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:22,071 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:22] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:22,205 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:22] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:22,340 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:22] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:22,476 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:22] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:22,625 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:22] "[31m[1mGET /api/policy/ShowUser HTTP/1.1[0m" 405 -
+2022-06-09 16:59:38,538 connectionpool.py [line:971] DEBUG Starting new HTTPS connection (1): 172.16.100.240:9999
+2022-06-09 16:59:40,911 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:41,009 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:41] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:42,391 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:42,405 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:42] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:43,773 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:43,784 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:43] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:45,134 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:45,144 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:45] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:46,501 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:46,512 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:46] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:47,901 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:47,918 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:47] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:49,441 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:49,449 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:49] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:50,831 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:50,840 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:50] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:52,214 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:52,227 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:52] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 16:59:53,635 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 16:59:53,649 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 16:59:53] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:45,216 connectionpool.py [line:272] DEBUG Resetting dropped connection: 172.16.100.240
+2022-06-09 17:01:47,312 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:47,322 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:47] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:48,775 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:48,789 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:48] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:50,175 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:50,189 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:50] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:51,555 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:51,564 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:51] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:52,925 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:52,942 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:52] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:54,327 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:54,336 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:54] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:55,697 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:55,707 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:55] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:57,068 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:57,077 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:57] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:58,433 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:58,443 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:58] "POST /api/policy/ShowUser HTTP/1.1" 200 -
+2022-06-09 17:01:59,872 connectionpool.py [line:452] DEBUG https://172.16.100.240:9999 "GET /restconf/data/huawei-user-management-fw:user-manage/vsys=public/user=zengshu,default HTTP/1.1" 200 886
+2022-06-09 17:01:59,884 _internal.py [line:225] INFO 172.16.33.56 - - [09/Jun/2022 17:01:59] "POST /api/policy/ShowUser HTTP/1.1" 200 -

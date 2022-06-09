@@ -142,22 +142,33 @@ class Pretreat_Event(object):
         data_info = self.get_data.get(2)
         # 获取策略需要的策略参数
         addr_ip = data_info.get("IP地址")
-        service = data_info.get("服务名")
+        service = data_info.get("服务名").split('|')
         no = Sdc_Access().Sdc_User_info(addr_ip)
         # 传入参数
-        object1 = Sdc_Access().Sdc_ChangeUsb(service, no)
-        return object1
+        if len(service) >1:
+            for item in service:
+                object1 = Sdc_Access().Sdc_ChangeUsb(item, no)
+            return object1
+        else:
+            object1 = Sdc_Access().Sdc_ChangeUsb(service, no)
+            return object1
 
     def Event_Sdc_ChangeSerial(self):
         """执行添加串口权限"""
         data_info = self.get_data.get(3)
         # 获取策略需要的策略参数
         addr_ip = data_info.get("IP地址")
-        process = data_info.get("原始文件名_MD5")
+        process = data_info.get("原始文件名_MD5").split('|')
         no = Sdc_Access().Sdc_User_info(addr_ip)
         # 传入参数
-        object1 = Sdc_Access().Sdc_ChangeSerial(process, no)
-        return object1
+        if len(process) >1:
+            for  item in process:
+                object1 = Sdc_Access().Sdc_ChangeSerial(item, no)
+            return object1
+        else:
+            process = data_info.get("原始文件名_MD5")
+            object1 = Sdc_Access().Sdc_ChangeSerial(process, no)
+            return object1
 
     def Event_Sdc_ChangeNet(self):
         """执行添加网络权限"""
@@ -169,8 +180,8 @@ class Pretreat_Event(object):
         no = Sdc_Access().Sdc_User_info(addr_ip)
         # 传入参数
         if len(process) >1:
-            for i in process:
-                object1 = Sdc_Access().Sdc_ChangeNet(process=i, no=no, remote=dives_ip)
+            for item in process:
+                object1 = Sdc_Access().Sdc_ChangeNet(process=item, no=no, remote=dives_ip)
             return object1
         else:
             process = data_info.get("程序原始文件名_MD5_1")
