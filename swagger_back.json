@@ -1,0 +1,867 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Policy接口",
+    "description": "内部使用测试接口无需添加token",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/test": {
+      "get": {
+        "tags": [
+          "TEST"
+        ],
+        "summary": "获取测试页面",
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/AcMac": {
+      "post": {
+        "tags": [
+          "AC"
+        ],
+        "summary": "内网设备准入",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcMacRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcMacRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcMacRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/AcUrl": {
+      "post": {
+        "tags": [
+          "AC"
+        ],
+        "summary": "行为管理url白名单",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcUrlRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcUrlRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcUrlRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy": {
+      "post": {
+        "tags": [
+          "NGFW"
+        ],
+        "summary": "防火墙端口映射",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/Users": {
+      "post": {
+        "tags": [
+          "NGFW"
+        ],
+        "summary": "新增VPN用户",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/UserModif": {
+      "put": {
+        "tags": [
+          "NGFW"
+        ],
+        "summary": "修改VPN用户",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserModifRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserModifRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserModifRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/ChangeUsbPolicy": {
+      "post": {
+        "tags": [
+          "SDC"
+        ],
+        "summary": "增加usb设备控制",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUSBRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUSBRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUSBRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/ChangeSerialCtrlPolicy": {
+      "post": {
+        "tags": [
+          "SDC"
+        ],
+        "summary": "增加串口控制",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeSerialCtrlRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeSerialCtrlRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeSerialCtrlRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/ChangeNetCtrlPolicy": {
+      "post": {
+        "tags": [
+          "SDC"
+        ],
+        "summary": "增加进程网络控制",
+        "requestBody": {
+          "description": "参数",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeNetWorkRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeNetWorkRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeNetWorkRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/policy/ChangeTpConfigPolicy": {
+      "post": {
+        "tags": [
+          "SDC"
+        ],
+        "summary": "增加托盘进程",
+        "requestBody": {
+          "description": "参数",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTpConfigPolicy"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTpConfigPolicy"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTpConfigPolicy"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "请求成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseBase"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseError400Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseBase": {
+        "type": "object",
+        "properties": {
+          "Msg": {
+            "type": "string",
+            "description": "成功标志",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "通用返回值"
+      },
+      "BaseError400Response": {
+        "type": "object",
+        "properties": {
+          "Code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ErrorMsg": {
+            "type": "string",
+            "description": "错误提示",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "根据不同的请求参数返回不同的错误代码"
+      },
+      "AcMacRequest": {
+        "type": "object",
+        "properties": {
+          "设备准入权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "mac地址": {
+            "type": "string",
+            "example": [
+              "macaddess"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "AcUrlRequest": {
+        "type": "object",
+        "properties": {
+          "url地址权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "公司名称": {
+            "type": "string",
+            "example": [
+              "dept"
+            ]
+          },
+          "uel地址": {
+            "type": "string",
+            "example": [
+              "ipaddr"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortRequest": {
+        "type": "object",
+        "properties": {
+          "端口映射权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "源IP地址": {
+            "type": "string",
+            "example": [
+              "ipaddr"
+            ]
+          },
+          "目的IP地址": {
+            "type": "string",
+            "example": [
+              "desipaddr"
+            ]
+          },
+          "目的端口号": {
+            "type": "string",
+            "example": [
+              "desport"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRequest": {
+        "type": "object",
+        "properties": {
+          "VPN账号权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "VPN权限类型": {
+            "type": "string",
+            "example": [
+              "type"
+            ]
+          },
+          "公司名称": {
+            "type": "string",
+            "example": [
+              "dept"
+            ]
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "申请人": {
+            "type": "string",
+            "example": [
+              "sname"
+            ]
+          },
+          "VPN用户组": {
+            "type": "string",
+            "example": [
+              "group"
+            ]
+          },
+          "VPN_YF": {
+            "type": "string",
+            "example": [
+              "if"
+            ],
+            "description": "是：表示研发组 否：表示职能组"
+          },
+          "结束时间": {
+            "type": "string",
+            "example": [
+              "time"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserModifRequest": {
+        "type": "object",
+        "properties": {
+          "VPN账号权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "VPN账号类型": {
+            "type": "string",
+            "example": [
+              "type"
+            ]
+          },
+          "公司名称": {
+            "type": "string",
+            "example": [
+              "dept"
+            ]
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "申请人": {
+            "type": "string",
+            "example": [
+              "sname"
+            ]
+          },
+          "结束时间": {
+            "type": "string",
+            "example": [
+              "time"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeUSBRequest": {
+        "type": "object",
+        "properties": {
+          "USB通讯权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "IP地址": {
+            "type": "string",
+            "example": [
+              "ipaddr"
+            ]
+          },
+          "服务名": {
+            "type": "string",
+            "example": [
+              "server"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeSerialCtrlRequest": {
+        "type": "object",
+        "properties": {
+          "串口权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "IP地址": {
+            "type": "string",
+            "example": [
+              "ipaddr"
+            ]
+          },
+          "原始文件名_MD5": {
+            "type": "string",
+            "example": [
+              "process/md5"
+            ],
+            "description": "进程或MD5"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeNetWorkRequest": {
+        "type": "object",
+        "properties": {
+          "网络设备_软件权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "IP地址": {
+            "type": "string",
+            "example": [
+              "srcipaddr"
+            ]
+          },
+          "设备IP地址": {
+            "type": "string",
+            "example": [
+              "devipaddr"
+            ]
+          },
+          "程序原始文件名_MD5_1": {
+            "type": "string",
+            "example": [
+              "process/md5"
+            ],
+            "description": "进程或MD5"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeTpConfigPolicy": {
+        "type": "object",
+        "properties": {
+          "托盘程序权限": {
+            "type": "integer",
+            "example": [
+              "0"
+            ],
+            "description": "0 表示未勾选 1 表示勾选"
+          },
+          "计算机名": {
+            "type": "string",
+            "example": [
+              "name"
+            ]
+          },
+          "IP地址": {
+            "type": "string",
+            "example": [
+              "srcipaddr"
+            ]
+          },
+          "程序名": {
+            "type": "string",
+            "example": [
+              "app_name"
+            ]
+          },
+          "程序绝对路径": {
+            "type": "string",
+            "example": [
+              "app_path"
+            ],
+            "description": "windows路径需要添加转义符"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
