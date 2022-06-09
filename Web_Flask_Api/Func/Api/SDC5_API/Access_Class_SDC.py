@@ -109,26 +109,3 @@ class Sdc_Access(object):
         result = requests.post(url=url, json=data, headers=self.headers)
         return result.status_code
 
-    # def test(self):
-    #     tesdt = {
-    #                 "name": "yesy",
-    #                 "path": "yest",
-    #                 "no": 2,
-    #                 "type": 2,
-    #                 "systemType": 1,
-    #                 "nodeType": 1
-    #                 }
-    #     url = config_user._Url_ChangeTpConfig
-    #     result = requests.post(url=url, json=tesdt, headers=self.headers)
-    #     print(result.request.body)
-    #     print(result.text)
-    #     return result.status_code
-
-# test = Sdc_Access()
-# result = test.Sdc_User_info('172.16.33.44')
-# print(result)
-# resuly = test.Sdc_DepInfo()
-# print(resuly)
-# result = test.test()
-# print(result)
-

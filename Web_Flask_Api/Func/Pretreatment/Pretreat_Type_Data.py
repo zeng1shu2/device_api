@@ -2,12 +2,10 @@
 """处理字段类型"""
 """预处理执行事件类"""
 # 从Web_Flask_Api目录下开始查询包
-import sys
-import string
+import sys,json
 sys.path.append('/data/My_App/Web_Flask_Api')
 sys.path.append('D:/project/Web_Flask_Api')
 from Log import log
-import json
 
 
 log = log.logs()

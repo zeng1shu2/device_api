@@ -165,11 +165,17 @@ class Pretreat_Event(object):
         # 获取策略需要的策略参数
         addr_ip = data_info.get("IP地址")
         dives_ip = data_info.get("设备IP地址")
-        process = data_info.get('程序原始文件名_MD5_1')
+        process = data_info.get("程序原始文件名_MD5_1").split('|')
         no = Sdc_Access().Sdc_User_info(addr_ip)
         # 传入参数
-        object1 = Sdc_Access().Sdc_ChangeNet(process=process, no=no, remote=dives_ip)
-        return object1
+        if len(process) >1:
+            for i in process:
+                object1 = Sdc_Access().Sdc_ChangeNet(process=i, no=no, remote=dives_ip)
+            return object1
+        else:
+            process = data_info.get("程序原始文件名_MD5_1")
+            object1 = Sdc_Access().Sdc_ChangeNet(process=process, no=no, remote=dives_ip)
+            return object1  
 
     def Event_Sdc_ChangeDesk(self):
         """执行添加托盘程序权限"""
